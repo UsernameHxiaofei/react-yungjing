@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" class='html'>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CloudMirror</title>
+</head>
+<style>
+  body .ant-message-notice{
+    max-width: 600px;
+    height: 300px;
+    margin: 0 auto;
+    overflow:auto;
+  }
+  body .ant-message-notice .ant-message-custom-content{
+    text-align: left;
+  }
+  .body .ant-message-notice:first-child {
+    margin-top: 100px;
+  }
+</style>
+<script>
+  // 关闭message弹窗
+  let html = document.querySelector('.html')
+  html.addEventListener('click',  function(e){
+    if (e.target.tagName == 'svg') {
+      let btn = document.querySelector('.anticon-close-circle')?document.querySelector('.anticon-close-circle'):''
+    if (btn) {
+      let box = document.querySelector('.ant-message').children[0]?document.querySelector('.ant-message').children[0]:''
+      let boxcopy = box?box.children[0]:''
+      if (boxcopy) {
+        box.removeChild(boxcopy)
+      }
+    }
+    }
+  })
+</script>
+<body>
+  <div id="root"></div>
+</body>
+</html>
